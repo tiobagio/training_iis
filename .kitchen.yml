@@ -1,0 +1,42 @@
+---
+driver:
+  name: ec2
+  aws_ssh_key_id: chef_demo_2x
+  region: us-west-2
+  security_group_ids: sg-2560a741
+  associate_public_ip: true
+  instance_type: m3.medium ##t2.micro
+  tags:
+    # Replace YOURNAME and YOURCOMPANY here
+    Name: "Chef Training Node for <YOURNAME>, Rees"
+    created-by: "test-kitchen"
+    user: administrator
+    X-Contact: <%= ENV['USER'] %>
+    X-Application: <%= ENV['X_APPLICATION'] %>
+    X-Customer: "Test-Kitchen"
+    X-Project: "Test-Kitchen"
+    X-TTL: 4
+
+transport:
+    username: administrator
+    ssh_key:  ~\.ssh\id_rsa
+    communicator: winrm
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+  format: documentation
+
+platforms:
+  - name: windows-2012r2
+
+suites:
+  - name: default
+    run_list:
+      - recipe[myiis::server]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
