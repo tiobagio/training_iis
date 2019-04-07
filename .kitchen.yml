@@ -8,13 +8,14 @@ driver:
   instance_type: m3.medium ##t2.micro
   tags:
     # Replace YOURNAME and YOURCOMPANY here
-    Name: "Chef Training Node for <YOURNAME>, Rees"
+    Name: "Chef tbagio Training Node for <YOURNAME>"
     created-by: "test-kitchen"
     user: administrator
-    X-Contact: <%= ENV['USER'] %>
-    X-Application: <%= ENV['X_APPLICATION'] %>
-    X-Customer: "Test-Kitchen"
-    X-Project: "Test-Kitchen"
+    X-Contact: "Tio Bagio"
+    X-Application: "web server"
+    X-Customer: "apjcorp"
+    X-Project: "Training"
+    X-Termination-Date: "2018-07-20T12:04:30Z"
     X-TTL: 4
 
 transport:
