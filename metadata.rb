@@ -1,6 +1,6 @@
 name 'myiis'
-maintainer 'Anthony Rees'
-maintainer_email 'anthony@chef.io'
+maintainer 'Tio Bagio'
+maintainer_email 'tbagio@chef.io'
 license 'All Rights Reserved'
 description 'Installs/Configures myiis'
 long_description 'Installs/Configures myiis'
